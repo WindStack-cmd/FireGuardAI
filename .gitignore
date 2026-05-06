@@ -1,0 +1,29 @@
+# Model weights (too large for GitHub)
+best.pt
+*.pt
+*.pth
+*.onnx
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment
+.env
+venv/
+env/
+.venv/
+
+# Dataset and training runs
+datasets/
+runs/
+data/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Streamlit
+.streamlit/secrets.toml
