@@ -387,6 +387,61 @@ st.markdown("""
     .dash-label, .kpi-label, .subtle-text, .panel-label {
         color: var(--muted) !important;
     }
+
+    /* Fix table visibility - make text much brighter and more readable */
+    table {
+        background: rgba(10, 14, 22, 0.95) !important;
+    }
+
+    table thead th {
+        background: rgba(30, 41, 70, 0.98) !important;
+        color: #ffffff !important;
+        font-weight: 900 !important;
+        border-color: rgba(255, 255, 255, 0.12) !important;
+        padding: 12px 16px !important;
+    }
+
+    table tbody td {
+        background: rgba(14, 20, 39, 0.9) !important;
+        color: #ffffff !important;
+        font-weight: 700 !important;
+        border-color: rgba(255, 255, 255, 0.1) !important;
+        padding: 10px 16px !important;
+    }
+
+    table tbody tr:hover td {
+        background: rgba(35, 48, 80, 0.98) !important;
+        color: #ffffff !important;
+    }
+
+    div[data-testid="stDataFrame"] {
+        background: rgba(10, 14, 22, 0.95) !important;
+    }
+
+    div[data-testid="stDataFrame"] table {
+        background: rgba(10, 14, 22, 0.95) !important;
+    }
+
+    div[data-testid="stDataFrame"] thead th {
+        background: rgba(30, 41, 70, 0.98) !important;
+        color: #ffffff !important;
+        font-weight: 900 !important;
+        border-color: rgba(255, 255, 255, 0.12) !important;
+        padding: 12px 16px !important;
+    }
+
+    div[data-testid="stDataFrame"] tbody td {
+        background: rgba(14, 20, 39, 0.9) !important;
+        color: #ffffff !important;
+        font-weight: 700 !important;
+        border-color: rgba(255, 255, 255, 0.1) !important;
+        padding: 10px 16px !important;
+    }
+
+    div[data-testid="stDataFrame"] tbody tr:hover td {
+        background: rgba(35, 48, 80, 0.98) !important;
+        color: #ffffff !important;
+    }
     </style>
 """, unsafe_allow_html=True)
 
