@@ -2,6 +2,22 @@
 
 FireGuard AI is a Streamlit app for detecting fire extinguishers in room and corridor images using a custom-trained YOLOv8 model. The app helps determine whether a scene is compliant by checking if at least one fire extinguisher is detected.
 
+[![Streamlit App](https://img.shields.io/badge/Live%20Demo-Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://fireguardai-sgmqma5vtlnpydinuprpzo.streamlit.app/)
+
+Live app: https://fireguardai-sgmqma5vtlnpydinuprpzo.streamlit.app/
+
+## Live demo
+
+The app is deployed here:
+
+https://fireguardai-sgmqma5vtlnpydinuprpzo.streamlit.app/
+
+## Screenshots
+
+The app uses a dark monitoring-style dashboard with a visible detection results panel, confidence summary, and improved table contrast for object names and confidence values.
+
+If you want to add image examples later, place them under a folder like `assets/` and reference them here in the README.
+
 ## What the app does
 
 - Upload an image of a room or corridor
@@ -9,6 +25,17 @@ FireGuard AI is a Streamlit app for detecting fire extinguishers in room and cor
 - View a compliance result in real time
 - Inspect the annotated image with bounding boxes
 - Review individual detection confidence scores in a compact table
+
+## Current UI changes
+
+- Dark, high-contrast dashboard layout with a custom gradient background
+- Hero section with quick model, use-case, and status cards
+- Sidebar guidance for upload flow, threshold usage, and image quality tips
+- Live confidence feedback with a threshold note and status row
+- Compliance banner for compliant and non-compliant scenes
+- Result dashboard with detection count, highest confidence, and current threshold
+- Detection details panel with stronger table visibility for object names and confidence values
+- Improved Streamlit widget styling for a cleaner monitoring-style interface
 
 ## Current UI features
 
@@ -95,4 +122,4 @@ streamlit run app.py
 
 ## Status
 
-The app has been updated and tested locally with the current dashboard layout, sidebar guidance, confidence feedback, and detection result flow.
+The app has been updated and tested locally with the current dashboard layout, sidebar guidance, confidence feedback, detection result flow, and readable detection details table.
