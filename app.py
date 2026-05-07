@@ -1,6 +1,6 @@
 import streamlit as st
 from ultralytics import YOLO
-from PIL import Image
+from PIL import Image, ImageDraw, ImageFont
 import numpy as np
 import cv2
 
@@ -309,6 +309,84 @@ st.markdown("""
         overflow: hidden;
         border: 1px solid rgba(255, 255, 255, 0.09);
     }
+    /* Darken common Streamlit widgets for better contrast */
+    div[data-testid="stFileUploader"] {
+        background: rgba(255, 255, 255, 0.03) !important;
+        border: 1px dashed rgba(255, 255, 255, 0.14) !important;
+        color: var(--text) !important;
+    }
+    div[data-testid="stFileUploader"] .stFileUploaderDropzone, div[data-testid="stFileUploader"] input, div[data-testid="stFileUploader"] button {
+        background: rgba(255, 255, 255, 0.03) !important;
+        color: var(--text) !important;
+        border-radius: 12px !important;
+    }
+    input[type="file"] {
+        background: rgba(255, 255, 255, 0.03) !important;
+        color: var(--text) !important;
+    }
+    .stMetric, .stMetric > div {
+        background: rgba(255, 255, 255, 0.03) !important;
+        border: 1px solid rgba(255, 255, 255, 0.06) !important;
+        color: var(--text) !important;
+    }
+    .stMetric .css-1q40rmi { /* label inside metric */
+        color: var(--muted) !important;
+    }
+    .stButton>button, button, .stFileUploader button {
+        background: linear-gradient(135deg, var(--accent), var(--accent-2)) !important;
+        color: #fff !important;
+        border: none !important;
+    }
+    /* Stronger rules to ensure Streamlit header and sidebar remain dark */
+    header, div[role="banner"] {
+        background: transparent !important;
+        box-shadow: none !important;
+        color: var(--text) !important;
+    }
+
+    [data-testid="stSidebar"] {
+        background: linear-gradient(180deg, rgba(8, 12, 24, 0.97), rgba(13, 18, 34, 0.98)) !important;
+        border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
+        color: var(--text) !important;
+    }
+
+    [data-testid="stSidebar"] .sidebar-card {
+        background: rgba(255, 255, 255, 0.04) !important;
+        border: 1px solid rgba(255, 255, 255, 0.08) !important;
+        color: var(--text) !important;
+    }
+    /* Strong overrides to ensure Streamlit inputs and metrics match the dark theme */
+    div[data-testid="stFileUploader"], div[data-testid="stFileUploader"] * {
+        background: rgba(255, 255, 255, 0.02) !important;
+        color: var(--text) !important;
+        border-color: rgba(255, 255, 255, 0.04) !important;
+        box-shadow: none !important;
+    }
+    div[data-testid="stFileUploader"] [role="button"], div[data-testid="stFileUploader"] button, div[data-testid="stFileUploader"] .stButton>button {
+        background: rgba(255, 255, 255, 0.04) !important;
+        color: var(--text) !important;
+        border: 1px solid rgba(255, 255, 255, 0.06) !important;
+        padding: 8px 14px !important;
+        border-radius: 10px !important;
+    }
+    input[type="file"] {
+        background: transparent !important;
+        color: var(--text) !important;
+    }
+    /* Metrics: make inner text legible and cards darker */
+    .stMetric, .stMetric * {
+        background: rgba(255, 255, 255, 0.02) !important;
+        color: var(--text) !important;
+        border-color: rgba(255, 255, 255, 0.04) !important;
+    }
+    .dash-card, .kpi, .panel, .result-shell {
+        background: linear-gradient(180deg, rgba(14,20,39,0.85), rgba(10,14,22,0.7)) !important;
+        border: 1px solid rgba(255,255,255,0.04) !important;
+    }
+    /* Ensure labels and small text use muted color */
+    .dash-label, .kpi-label, .subtle-text, .panel-label {
+        color: var(--muted) !important;
+    }
     </style>
 """, unsafe_allow_html=True)
 
@@ -437,7 +515,7 @@ with col2:
         st.subheader("Detection Result")
         result_image = results[0].plot()
         result_image_rgb = cv2.cvtColor(result_image, cv2.COLOR_BGR2RGB)
-        st.image(result_image_rgb, width="stretch")
+        st.image(result_image_rgb, width=700)
 
         st.markdown('<div class="result-shell">', unsafe_allow_html=True)
         st.markdown("**Detection Details**")
@@ -458,10 +536,27 @@ with col2:
             unsafe_allow_html=True
         )
         st.info("Upload a room or corridor image on the left to start detection.")
-        st.image(
-            "https://via.placeholder.com/900x520/101826/edf2ff?text=Upload+an+Image+to+Detect",
-            width="stretch"
-        )
+        # Generate a local placeholder image to avoid external requests
+        placeholder_w, placeholder_h = 900, 520
+        placeholder = Image.new("RGB", (placeholder_w, placeholder_h), "#101826")
+        draw = ImageDraw.Draw(placeholder)
+        try:
+            font = ImageFont.truetype("arial.ttf", 36)
+        except Exception:
+            font = ImageFont.load_default()
+        text = "Upload an Image to Detect"
+        # Calculate text size in a way that's compatible across Pillow versions
+        try:
+            bbox = draw.textbbox((0, 0), text, font=font)
+            text_w, text_h = bbox[2] - bbox[0], bbox[3] - bbox[1]
+        except Exception:
+            try:
+                text_w, text_h = font.getsize(text)
+            except Exception:
+                # Fallback: estimate size
+                text_w, text_h = (len(text) * 10, 20)
+        draw.text(((placeholder_w - text_w) / 2, (placeholder_h - text_h) / 2), text, fill="#edf2ff", font=font)
+        st.image(placeholder, width=700)
     st.markdown('</div>', unsafe_allow_html=True)
 
 st.markdown("---")
