@@ -472,6 +472,252 @@ st.markdown("""
             grid-template-columns: 1fr;
         }
     }
+
+    /* Fix all Streamlit white patches */
+    [data-testid="stAppViewContainer"] {
+        background: linear-gradient(135deg, #05070d 0%, #0a0f1a 50%, #0f1420 100%) !important;
+    }
+
+    [data-testid="stVerticalBlock"] {
+        background: transparent !important;
+    }
+
+    /* Input fields and text areas */
+    input {
+        background: linear-gradient(135deg, rgba(20, 27, 50, 0.8) 0%, rgba(15, 20, 40, 0.8) 100%) !important;
+        color: white !important;
+        border: 1.5px solid rgba(255, 71, 87, 0.15) !important;
+        border-radius: 12px !important;
+    }
+
+    input:focus {
+        border-color: rgba(255, 71, 87, 0.35) !important;
+        box-shadow: 0 0 0 3px rgba(255, 71, 87, 0.1) !important;
+    }
+
+    textarea {
+        background: linear-gradient(135deg, rgba(20, 27, 50, 0.8) 0%, rgba(15, 20, 40, 0.8) 100%) !important;
+        color: white !important;
+        border: 1.5px solid rgba(255, 71, 87, 0.15) !important;
+        border-radius: 12px !important;
+    }
+
+    textarea:focus {
+        border-color: rgba(255, 71, 87, 0.35) !important;
+        box-shadow: 0 0 0 3px rgba(255, 71, 87, 0.1) !important;
+    }
+
+    select {
+        background: linear-gradient(135deg, rgba(20, 27, 50, 0.8) 0%, rgba(15, 20, 40, 0.8) 100%) !important;
+        color: white !important;
+        border: 1.5px solid rgba(255, 71, 87, 0.15) !important;
+        border-radius: 12px !important;
+    }
+
+    /* Streamlit dividers */
+    [data-testid="stHorizontalBlock"] {
+        background: transparent !important;
+    }
+
+    hr {
+        border-color: rgba(255, 71, 87, 0.1) !important;
+        margin: 2rem 0 !important;
+    }
+
+    /* Hide white backgrounds */
+    .stTabs, [data-testid="stTabs"] {
+        background: transparent !important;
+    }
+
+    /* File uploader fix */
+    [data-testid="stFileUploader"] section {
+        background: linear-gradient(135deg, rgba(15, 22, 42, 0.9) 0%, rgba(10, 15, 30, 0.95) 100%) !important;
+        border: 2px dashed rgba(255, 71, 87, 0.25) !important;
+        border-radius: 16px !important;
+    }
+
+    [data-testid="stFileUploader"] section:hover {
+        background: linear-gradient(135deg, rgba(20, 27, 50, 0.95) 0%, rgba(15, 22, 42, 0.98) 100%) !important;
+        border-color: rgba(255, 71, 87, 0.4) !important;
+    }
+
+    /* Hide all white text inputs */
+    .stTextInput > div > div > input {
+        background: linear-gradient(135deg, rgba(20, 27, 50, 0.8) 0%, rgba(15, 20, 40, 0.8) 100%) !important;
+        color: white !important;
+        caret-color: #ffa502 !important;
+    }
+
+    /* Streamlit columns */
+    [data-testid="column"] {
+        background: transparent !important;
+    }
+
+    /* All text colors */
+    p, span, label, h1, h2, h3, h4, h5, h6 {
+        color: white !important;
+    }
+
+    /* Expander styling */
+    [data-testid="stExpander"] {
+        background: transparent !important;
+        border: 1.5px solid rgba(255, 71, 87, 0.1) !important;
+        border-radius: 12px !important;
+    }
+
+    [data-testid="stExpander"] > div {
+        background: transparent !important;
+    }
+
+    /* Tab styling */
+    [data-testid="stTabs"] [aria-selected="true"] {
+        background: rgba(255, 71, 87, 0.15) !important;
+        border-bottom: 2px solid rgba(255, 71, 87, 0.5) !important;
+    }
+
+    [data-testid="stTabs"] [aria-selected="false"] {
+        background: transparent !important;
+        border-bottom: 1px solid rgba(255, 71, 87, 0.1) !important;
+    }
+
+    /* Number input */
+    .stNumberInput > div > div > input {
+        background: linear-gradient(135deg, rgba(20, 27, 50, 0.8) 0%, rgba(15, 20, 40, 0.8) 100%) !important;
+        color: white !important;
+        caret-color: #ffa502 !important;
+        border: 1.5px solid rgba(255, 71, 87, 0.15) !important;
+    }
+
+    /* Select box */
+    [data-testid="stSelectbox"] > div > div > div {
+        background: linear-gradient(135deg, rgba(20, 27, 50, 0.8) 0%, rgba(15, 20, 40, 0.8) 100%) !important;
+        border: 1.5px solid rgba(255, 71, 87, 0.15) !important;
+        color: white !important;
+    }
+
+    /* Slider styling */
+    [data-testid="stSlider"] {
+        background: transparent !important;
+    }
+
+    [data-testid="stSlider"] input {
+        accent-color: #ff4757 !important;
+    }
+
+    /* Checkbox styling */
+    [data-testid="stCheckbox"] {
+        background: transparent !important;
+    }
+
+    [data-testid="stCheckbox"] input {
+        accent-color: #ff4757 !important;
+    }
+
+    /* Radio styling */
+    [data-testid="stRadio"] {
+        background: transparent !important;
+    }
+
+    [data-testid="stRadio"] input {
+        accent-color: #ff4757 !important;
+    }
+
+    /* Data frame styling */
+    [data-testid="stDataFrame"] {
+        background: rgba(10, 15, 30, 0.95) !important;
+    }
+
+    .streamlit-expanderContent {
+        background: rgba(10, 15, 30, 0.5) !important;
+    }
+
+    /* Code block */
+    pre {
+        background: rgba(10, 15, 30, 0.95) !important;
+        color: #ffffff !important;
+        border: 1px solid rgba(255, 71, 87, 0.1) !important;
+    }
+
+    code {
+        background: rgba(20, 27, 50, 0.6) !important;
+        color: #ffa502 !important;
+        padding: 2px 6px !important;
+        border-radius: 4px !important;
+    }
+
+    /* Info/Warning/Error boxes */
+    [data-testid="stAlert"] {
+        background: linear-gradient(135deg, rgba(20, 27, 50, 0.9) 0%, rgba(15, 20, 40, 0.95) 100%) !important;
+        border: 1.5px solid rgba(255, 71, 87, 0.2) !important;
+        border-left: 4px solid #ff4757 !important;
+        border-radius: 12px !important;
+        padding: 1rem !important;
+    }
+
+    /* Remove any remaining white backgrounds */
+    [style*="white"], [style*="#fff"], [style*="#ffffff"] {
+        filter: invert(1) !important;
+    }
+
+    /* Success message styling */
+    .streamlit-alert-success {
+        border-left-color: #2ed573 !important;
+    }
+
+    /* Error message styling */
+    .streamlit-alert-danger, .streamlit-alert-error {
+        border-left-color: #ff4757 !important;
+    }
+
+    /* Warning styling */
+    .streamlit-alert-warning {
+        border-left-color: #ffa502 !important;
+    }
+
+    /* Loading spinner */
+    [data-testid="stSpinner"] {
+        color: #ff4757 !important;
+    }
+
+    /* Progress bar */
+    [data-testid="stProgress"] {
+        background: rgba(20, 27, 50, 0.6) !important;
+    }
+
+    /* Ensure all visible text is white or light colored */
+    .stMarkdown, [data-testid="stMarkdownContainer"] {
+        color: white !important;
+    }
+
+    .stMarkdown h1, .stMarkdown h2, .stMarkdown h3, .stMarkdown h4, .stMarkdown h5, .stMarkdown h6 {
+        color: white !important;
+    }
+
+    /* Link styling */
+    a {
+        color: #ffa502 !important;
+        text-decoration: none !important;
+    }
+
+    a:hover {
+        color: #ff4757 !important;
+        text-decoration: underline !important;
+    }
+
+    /* Caption and small text */
+    .streamlit-caption, [data-testid="stCaption"] {
+        color: #b0b8c8 !important;
+    }
+
+    /* Block container background */
+    .main, .block-container {
+        background: linear-gradient(135deg, #05070d 0%, #0a0f1a 50%, #0f1420 100%) !important;
+    }
+
+    /* Remove all light backgrounds from containers */
+    .stContainer {
+        background: transparent !important;
+    }
     </style>
 """, unsafe_allow_html=True)
 
