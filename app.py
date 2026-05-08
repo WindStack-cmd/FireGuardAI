@@ -805,6 +805,106 @@ st.markdown("""
         background: rgba(15, 22, 42, 0.8) !important;
         border: 1px solid rgba(255, 71, 87, 0.1) !important;
         border-top: 1.5px solid rgba(255, 71, 87, 0.15) !important;
+        padding: 1rem !important;
+    }
+
+    /* SIDEBAR IMPROVEMENTS */
+    [data-testid="stSidebar"] [data-testid="stExpander"] {
+        margin-bottom: 1rem !important;
+        margin-top: 1rem !important;
+    }
+
+    [data-testid="stSidebar"] [data-testid="stExpanderContent"] {
+        padding: 1.2rem !important;
+    }
+
+    /* Sidebar metrics - make them full-width and properly spaced */
+    [data-testid="stSidebar"] [data-testid="stMetric"] {
+        background: linear-gradient(135deg, rgba(15, 22, 42, 0.9) 0%, rgba(10, 15, 30, 0.95) 100%) !important;
+        border: 1.5px solid rgba(255, 71, 87, 0.2) !important;
+        border-radius: 14px !important;
+        padding: 1.5rem 1.2rem !important;
+        flex: 1 !important;
+        min-height: auto !important;
+        width: 100% !important;
+    }
+
+    [data-testid="stSidebar"] [data-testid="stMetric"] label {
+        font-size: 0.85rem !important;
+        white-space: normal !important;
+        word-break: break-word !important;
+        margin-bottom: 0.5rem !important;
+    }
+
+    [data-testid="stSidebar"] [data-testid="stMetric"] div[data-testid="stMetricValue"] {
+        font-size: 1.6rem !important;
+        font-weight: 800 !important;
+        white-space: normal !important;
+    }
+
+    [data-testid="stSidebar"] [data-testid="stMetric"] div[data-testid="stMetricDelta"] {
+        font-size: 0.8rem !important;
+        color: #b0b8c8 !important;
+        margin-top: 0.3rem !important;
+    }
+
+    /* Sidebar column arrangement for metrics */
+    [data-testid="stSidebar"] [data-testid="stHorizontalBlock"] {
+        margin-top: 1rem !important;
+        margin-bottom: 1rem !important;
+        gap: 0.8rem !important;
+    }
+
+    [data-testid="stSidebar"] [data-testid="stColumn"] {
+        flex: 1 !important;
+    }
+
+    /* Sidebar divider */
+    [data-testid="stSidebar"] hr {
+        margin: 1.5rem 0 !important;
+        border-color: rgba(255, 71, 87, 0.15) !important;
+    }
+
+    /* Sidebar markdown content */
+    [data-testid="stSidebar"] [data-testid="stMarkdownContainer"] {
+        padding: 0.5rem 0 !important;
+    }
+
+    /* Sidebar card styling */
+    [data-testid="stSidebar"] .sidebar-card {
+        background: transparent !important;
+        margin-bottom: 1rem !important;
+    }
+
+    /* Sidebar text content */
+    [data-testid="stSidebar"] p {
+        margin-bottom: 0.5rem !important;
+        line-height: 1.5 !important;
+    }
+
+    /* Fix sidebar expander headers */
+    [data-testid="stSidebar"] [data-testid="stExpander"] > button {
+        padding: 1rem !important;
+        font-weight: 700 !important;
+        font-size: 1.05rem !important;
+    }
+
+    /* Sidebar bullet points */
+    [data-testid="stSidebar"] ul {
+        margin: 0.5rem 0 !important;
+        padding-left: 1.2rem !important;
+    }
+
+    [data-testid="stSidebar"] li {
+        margin: 0.4rem 0 !important;
+        color: white !important;
+    }
+
+    /* Sidebar subtle text */
+    [data-testid="stSidebar"] .subtle-text {
+        color: #b0b8c8 !important;
+        font-size: 0.95rem !important;
+        line-height: 1.6 !important;
     }
 
     /* Fix button container backgrounds */
