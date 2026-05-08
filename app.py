@@ -916,7 +916,59 @@ st.markdown("""
         max-width: none !important;
     }
 
-    /* Sidebar divider */
+    /* Compact sidebar metric cards grid */
+    .sidebar-metrics-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 0.6rem;
+        width: 100%;
+        margin: 0 !important;
+    }
+
+    .sidebar-metric-card {
+        background: linear-gradient(135deg, rgba(15, 22, 42, 0.9) 0%, rgba(10, 15, 30, 0.95) 100%) !important;
+        border: 1.2px solid rgba(255, 71, 87, 0.15) !important;
+        border-radius: 12px !important;
+        padding: 0.9rem 0.8rem !important;
+        text-align: center !important;
+        overflow: visible !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .sidebar-metric-card:hover {
+        border-color: rgba(255, 71, 87, 0.3) !important;
+        background: linear-gradient(135deg, rgba(20, 27, 50, 0.95) 0%, rgba(15, 22, 42, 0.98) 100%) !important;
+    }
+
+    .sidebar-metric-label {
+        font-size: 0.7rem !important;
+        font-weight: 700 !important;
+        text-transform: uppercase !important;
+        color: #b0b8c8 !important;
+        letter-spacing: 0.05em !important;
+        margin-bottom: 0.4rem !important;
+        line-height: 1.2 !important;
+    }
+
+    .sidebar-metric-value {
+        font-size: 1.4rem !important;
+        font-weight: 900 !important;
+        color: #ffa502 !important;
+        margin-bottom: 0.2rem !important;
+        overflow: visible !important;
+        word-break: break-word !important;
+        line-height: 1.2 !important;
+    }
+
+    .sidebar-metric-delta {
+        font-size: 0.65rem !important;
+        color: #b0b8c8 !important;
+        line-height: 1.2 !important;
+        overflow: visible !important;
+    }
+
+        /* Sidebar divider */
     [data-testid="stSidebar"] hr {
         margin: 1.5rem 0 !important;
         border-color: rgba(255, 71, 87, 0.15) !important;
@@ -1225,13 +1277,26 @@ with st.sidebar:
     
     st.divider()
     
-    col1, col2, col3 = st.columns(3)
-    with col1:
-        st.metric("Model", "YOLOv8s", "Custom Trained")
-    with col2:
-        st.metric("Precision", "98%", "+18%")
-    with col3:
-        st.metric("Recall", "95%", "+17%")
+    # Compact metric cards
+    st.markdown("""
+    <div class="sidebar-metrics-grid">
+        <div class="sidebar-metric-card">
+            <div class="sidebar-metric-label">Model</div>
+            <div class="sidebar-metric-value">YOLOv8s</div>
+            <div class="sidebar-metric-delta">Custom</div>
+        </div>
+        <div class="sidebar-metric-card">
+            <div class="sidebar-metric-label">Precision</div>
+            <div class="sidebar-metric-value">98%</div>
+            <div class="sidebar-metric-delta">+18%</div>
+        </div>
+        <div class="sidebar-metric-card">
+            <div class="sidebar-metric-label">Recall</div>
+            <div class="sidebar-metric-value">95%</div>
+            <div class="sidebar-metric-delta">+17%</div>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
 
 # Header
 st.markdown(
