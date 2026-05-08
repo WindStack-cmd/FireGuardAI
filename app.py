@@ -2,7 +2,6 @@ import streamlit as st
 from ultralytics import YOLO
 from PIL import Image, ImageDraw, ImageFont
 import numpy as np
-import cv2
 
 # Page config
 st.set_page_config(
@@ -569,7 +568,7 @@ with col2:
 
         st.subheader("Detection Result")
         result_image = results[0].plot()
-        result_image_rgb = cv2.cvtColor(result_image, cv2.COLOR_BGR2RGB)
+        result_image_rgb = result_image[..., ::-1]  # Convert BGR to RGB
         st.image(result_image_rgb, width=700)
 
         st.markdown('<div class="result-shell">', unsafe_allow_html=True)
