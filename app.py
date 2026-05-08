@@ -827,25 +827,54 @@ st.markdown("""
         flex: 1 !important;
         min-height: auto !important;
         width: 100% !important;
+        overflow: visible !important;
+    }
+
+    /* Fix metric container to show full text */
+    [data-testid="stSidebar"] [data-testid="stMetric"] > div {
+        width: 100% !important;
+        overflow: visible !important;
+    }
+
+    [data-testid="stSidebar"] [data-testid="stMetric"] > div > div {
+        width: 100% !important;
+        overflow: visible !important;
     }
 
     [data-testid="stSidebar"] [data-testid="stMetric"] label {
-        font-size: 0.85rem !important;
+        font-size: 0.9rem !important;
         white-space: normal !important;
         word-break: break-word !important;
-        margin-bottom: 0.5rem !important;
+        margin-bottom: 0.6rem !important;
+        overflow: visible !important;
+        text-overflow: clip !important;
+        display: block !important;
+        width: 100% !important;
+        color: #b0b8c8 !important;
+        font-weight: 600 !important;
     }
 
     [data-testid="stSidebar"] [data-testid="stMetric"] div[data-testid="stMetricValue"] {
-        font-size: 1.6rem !important;
-        font-weight: 800 !important;
+        font-size: 1.8rem !important;
+        font-weight: 900 !important;
         white-space: normal !important;
+        overflow: visible !important;
+        text-overflow: clip !important;
+        word-break: break-word !important;
+        display: block !important;
+        width: 100% !important;
+        color: #ffa502 !important;
+        line-height: 1.2 !important;
     }
 
     [data-testid="stSidebar"] [data-testid="stMetric"] div[data-testid="stMetricDelta"] {
-        font-size: 0.8rem !important;
+        font-size: 0.85rem !important;
         color: #b0b8c8 !important;
-        margin-top: 0.3rem !important;
+        margin-top: 0.4rem !important;
+        overflow: visible !important;
+        text-overflow: clip !important;
+        display: block !important;
+        width: 100% !important;
     }
 
     /* Sidebar column arrangement for metrics */
@@ -853,10 +882,13 @@ st.markdown("""
         margin-top: 1rem !important;
         margin-bottom: 1rem !important;
         gap: 0.8rem !important;
+        width: 100% !important;
     }
 
     [data-testid="stSidebar"] [data-testid="stColumn"] {
         flex: 1 !important;
+        min-width: 0 !important;
+        overflow: visible !important;
     }
 
     /* Sidebar divider */
