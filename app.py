@@ -822,73 +822,98 @@ st.markdown("""
     [data-testid="stSidebar"] [data-testid="stMetric"] {
         background: linear-gradient(135deg, rgba(15, 22, 42, 0.9) 0%, rgba(10, 15, 30, 0.95) 100%) !important;
         border: 1.5px solid rgba(255, 71, 87, 0.2) !important;
-        border-radius: 14px !important;
-        padding: 1.5rem 1.2rem !important;
+        border-radius: 16px !important;
+        padding: 1.8rem 1.5rem !important;
         flex: 1 !important;
-        min-height: auto !important;
+        min-height: 140px !important;
         width: 100% !important;
         overflow: visible !important;
+        max-width: none !important;
     }
 
     /* Fix metric container to show full text */
     [data-testid="stSidebar"] [data-testid="stMetric"] > div {
         width: 100% !important;
         overflow: visible !important;
+        max-width: none !important;
     }
 
     [data-testid="stSidebar"] [data-testid="stMetric"] > div > div {
         width: 100% !important;
         overflow: visible !important;
+        max-width: none !important;
+        display: block !important;
+    }
+
+    [data-testid="stSidebar"] [data-testid="stMetric"] > div > div > div {
+        width: 100% !important;
+        overflow: visible !important;
+        max-width: none !important;
     }
 
     [data-testid="stSidebar"] [data-testid="stMetric"] label {
-        font-size: 0.9rem !important;
+        font-size: 0.95rem !important;
         white-space: normal !important;
-        word-break: break-word !important;
-        margin-bottom: 0.6rem !important;
+        word-wrap: break-word !important;
+        word-break: normal !important;
+        margin-bottom: 0.8rem !important;
         overflow: visible !important;
         text-overflow: clip !important;
         display: block !important;
         width: 100% !important;
+        max-width: none !important;
         color: #b0b8c8 !important;
-        font-weight: 600 !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.05em !important;
+        text-transform: uppercase !important;
+        line-height: 1.4 !important;
     }
 
     [data-testid="stSidebar"] [data-testid="stMetric"] div[data-testid="stMetricValue"] {
-        font-size: 1.8rem !important;
+        font-size: 2rem !important;
         font-weight: 900 !important;
         white-space: normal !important;
+        word-wrap: break-word !important;
+        word-break: normal !important;
         overflow: visible !important;
         text-overflow: clip !important;
-        word-break: break-word !important;
         display: block !important;
         width: 100% !important;
+        max-width: none !important;
         color: #ffa502 !important;
-        line-height: 1.2 !important;
+        line-height: 1.3 !important;
+        margin: 0.3rem 0 !important;
     }
 
     [data-testid="stSidebar"] [data-testid="stMetric"] div[data-testid="stMetricDelta"] {
-        font-size: 0.85rem !important;
+        font-size: 0.9rem !important;
         color: #b0b8c8 !important;
-        margin-top: 0.4rem !important;
+        margin-top: 0.5rem !important;
         overflow: visible !important;
         text-overflow: clip !important;
         display: block !important;
         width: 100% !important;
+        max-width: none !important;
+        word-wrap: break-word !important;
+        word-break: normal !important;
+        line-height: 1.4 !important;
     }
 
-    /* Sidebar column arrangement for metrics */
+    /* Sidebar column arrangement for metrics - wider spacing */
     [data-testid="stSidebar"] [data-testid="stHorizontalBlock"] {
-        margin-top: 1rem !important;
-        margin-bottom: 1rem !important;
-        gap: 0.8rem !important;
+        margin-top: 1.2rem !important;
+        margin-bottom: 1.2rem !important;
+        gap: 1rem !important;
         width: 100% !important;
+        display: flex !important;
+        flex-wrap: nowrap !important;
     }
 
     [data-testid="stSidebar"] [data-testid="stColumn"] {
         flex: 1 !important;
         min-width: 0 !important;
         overflow: visible !important;
+        max-width: none !important;
     }
 
     /* Sidebar divider */
