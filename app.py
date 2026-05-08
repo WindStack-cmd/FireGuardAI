@@ -718,6 +718,302 @@ st.markdown("""
     .stContainer {
         background: transparent !important;
     }
+
+    /* ===== AGGRESSIVE WHITE PATCH FIXES ===== */
+    
+    /* Top header/toolbar area */
+    header {
+        background: linear-gradient(135deg, #05070d 0%, #0a0f1a 100%) !important;
+        border-bottom: 1px solid rgba(255, 71, 87, 0.1) !important;
+    }
+
+    [data-testid="stHeader"] {
+        background: linear-gradient(135deg, #05070d 0%, #0a0f1a 100%) !important;
+    }
+
+    /* Sidebar improvements */
+    [data-testid="stSidebar"] {
+        background: linear-gradient(135deg, #05070d 0%, #0a0f1a 100%) !important;
+        border-right: 1.5px solid rgba(255, 71, 87, 0.1) !important;
+    }
+
+    [data-testid="stSidebar"] [data-testid="stVerticalBlock"] {
+        background: transparent !important;
+    }
+
+    /* Fix metric cards that show white */
+    [data-testid="stMetric"] {
+        background: linear-gradient(135deg, rgba(20, 27, 50, 0.8) 0%, rgba(15, 20, 40, 0.8) 100%) !important;
+        border: 1.5px solid rgba(255, 71, 87, 0.15) !important;
+        border-radius: 16px !important;
+        padding: 1.2rem !important;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
+    }
+
+    [data-testid="stMetric"] > div {
+        background: transparent !important;
+    }
+
+    [data-testid="stMetric"] div[data-testid="stMetricDelta"] {
+        background: transparent !important;
+    }
+
+    /* Metric text colors */
+    [data-testid="stMetric"] label {
+        color: #b0b8c8 !important;
+        font-weight: 700 !important;
+        text-transform: uppercase !important;
+        font-size: 0.75rem !important;
+        letter-spacing: 0.1em !important;
+    }
+
+    [data-testid="stMetric"] div[data-testid="stMetricValue"] {
+        color: #ffa502 !important;
+        font-size: 1.8rem !important;
+        font-weight: 800 !important;
+    }
+
+    /* Column backgrounds */
+    [data-testid="stColumn"] {
+        background: transparent !important;
+    }
+
+    [data-testid="stColumn"] > div {
+        background: transparent !important;
+    }
+
+    /* Horizontal block */
+    [data-testid="stHorizontalBlock"] {
+        background: transparent !important;
+    }
+
+    [data-testid="stHorizontalBlock"] > div {
+        background: transparent !important;
+    }
+
+    /* Vertical blocks */
+    [data-testid="stVerticalBlock"] {
+        background: transparent !important;
+    }
+
+    [data-testid="stVerticalBlock"] > div {
+        background: transparent !important;
+    }
+
+    /* Expand/collapse sections */
+    [data-testid="stExpanderContent"] {
+        background: rgba(15, 22, 42, 0.8) !important;
+        border: 1px solid rgba(255, 71, 87, 0.1) !important;
+        border-top: 1.5px solid rgba(255, 71, 87, 0.15) !important;
+    }
+
+    /* Fix button container backgrounds */
+    [data-testid="stElementContainer"] {
+        background: transparent !important;
+    }
+
+    /* Ensure upload button area is dark */
+    [data-testid="stFileUploader"] {
+        background: transparent !important;
+    }
+
+    [data-testid="stFileUploader"] > div {
+        background: transparent !important;
+    }
+
+    [data-testid="stFileUploader"] > div > div {
+        background: linear-gradient(135deg, rgba(15, 22, 42, 0.9) 0%, rgba(10, 15, 30, 0.95) 100%) !important;
+        border: 2px dashed rgba(255, 71, 87, 0.25) !important;
+        border-radius: 16px !important;
+        padding: 1.5rem !important;
+    }
+
+    [data-testid="stFileUploader"] > div > div:hover {
+        background: linear-gradient(135deg, rgba(20, 27, 50, 0.95) 0%, rgba(15, 22, 42, 0.98) 100%) !important;
+        border-color: rgba(255, 71, 87, 0.4) !important;
+    }
+
+    /* Button styling - fix upload button */
+    button, [role="button"] {
+        background: linear-gradient(135deg, #ff4757 0%, #ffa502 100%) !important;
+        color: white !important;
+        border: none !important;
+        border-radius: 12px !important;
+        font-weight: 700 !important;
+        padding: 0.8rem 1.8rem !important;
+        box-shadow: 0 8px 24px rgba(255, 71, 87, 0.3) !important;
+        transition: all 0.2s ease !important;
+    }
+
+    button:hover, [role="button"]:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 12px 32px rgba(255, 71, 87, 0.5) !important;
+    }
+
+    button:active, [role="button"]:active {
+        transform: translateY(0) !important;
+    }
+
+    /* Subheader text */
+    h1, h2, h3, h4, h5, h6 {
+        color: white !important;
+    }
+
+    /* Divider line color */
+    hr, [data-testid="stHorizontalBlock"] {
+        border-color: rgba(255, 71, 87, 0.1) !important;
+        margin: 2rem 0 !important;
+    }
+
+    /* Text content styling */
+    p {
+        color: white !important;
+    }
+
+    span {
+        color: white !important;
+    }
+
+    label {
+        color: white !important;
+    }
+
+    /* Markdown content */
+    [data-testid="stMarkdownContainer"] {
+        background: transparent !important;
+        color: white !important;
+    }
+
+    [data-testid="stMarkdownContainer"] p {
+        color: white !important;
+    }
+
+    [data-testid="stMarkdownContainer"] h1,
+    [data-testid="stMarkdownContainer"] h2,
+    [data-testid="stMarkdownContainer"] h3,
+    [data-testid="stMarkdownContainer"] h4,
+    [data-testid="stMarkdownContainer"] h5,
+    [data-testid="stMarkdownContainer"] h6 {
+        color: white !important;
+    }
+
+    /* Caption text */
+    [data-testid="stCaption"] {
+        color: #b0b8c8 !important;
+    }
+
+    .streamlit-caption {
+        color: #b0b8c8 !important;
+    }
+
+    /* Small text styling */
+    small {
+        color: #b0b8c8 !important;
+    }
+
+    /* Alert boxes - dark themed */
+    [data-testid="stAlert"] {
+        background: linear-gradient(135deg, rgba(20, 27, 50, 0.9) 0%, rgba(15, 20, 40, 0.95) 100%) !important;
+        border: 1.5px solid rgba(255, 71, 87, 0.2) !important;
+        border-radius: 12px !important;
+        padding: 1.2rem !important;
+    }
+
+    [data-testid="stAlert"] > div {
+        color: white !important;
+    }
+
+    /* Info message */
+    .stAlert-info {
+        border-left: 4px solid #2ed573 !important;
+        background: linear-gradient(135deg, rgba(20, 27, 50, 0.9) 0%, rgba(15, 20, 40, 0.95) 100%) !important;
+    }
+
+    /* Success message */
+    .stAlert-success {
+        border-left: 4px solid #2ed573 !important;
+        background: linear-gradient(135deg, rgba(20, 27, 50, 0.9) 0%, rgba(15, 20, 40, 0.95) 100%) !important;
+    }
+
+    /* Warning message */
+    .stAlert-warning {
+        border-left: 4px solid #ffa502 !important;
+        background: linear-gradient(135deg, rgba(20, 27, 50, 0.9) 0%, rgba(15, 20, 40, 0.95) 100%) !important;
+    }
+
+    /* Error message */
+    .stAlert-error {
+        border-left: 4px solid #ff4757 !important;
+        background: linear-gradient(135deg, rgba(20, 27, 50, 0.9) 0%, rgba(15, 20, 40, 0.95) 100%) !important;
+    }
+
+    /* Subheader line */
+    [data-testid="stDecoration"] {
+        background: linear-gradient(90deg, transparent, rgba(255, 71, 87, 0.2), transparent) !important;
+        height: 2px !important;
+    }
+
+    /* Fix metric numbers and labels */
+    [data-testid="stMetric"] > div > div:first-child {
+        background: transparent !important;
+    }
+
+    /* Ensure all list items are properly styled */
+    li {
+        color: white !important;
+    }
+
+    /* Code styling */
+    code {
+        background: rgba(20, 27, 50, 0.8) !important;
+        color: #ffa502 !important;
+        border: 1px solid rgba(255, 71, 87, 0.1) !important;
+        border-radius: 6px !important;
+        padding: 2px 6px !important;
+    }
+
+    pre {
+        background: rgba(10, 15, 30, 0.95) !important;
+        color: #ffffff !important;
+        border: 1px solid rgba(255, 71, 87, 0.1) !important;
+        border-radius: 12px !important;
+        padding: 1rem !important;
+    }
+
+    /* Ensure body text is never light */
+    body {
+        background: linear-gradient(135deg, #05070d 0%, #0a0f1a 50%, #0f1420 100%) !important;
+        color: white !important;
+    }
+
+    html {
+        background: linear-gradient(135deg, #05070d 0%, #0a0f1a 50%, #0f1420 100%) !important;
+    }
+
+    /* Force all unspecified text to be white or light */
+    * {
+        color: inherit !important;
+    }
+
+    /* Link styling */
+    a {
+        color: #ffa502 !important;
+    }
+
+    a:hover {
+        color: #ff4757 !important;
+    }
+
+    /* Selection colors */
+    ::selection {
+        background: rgba(255, 71, 87, 0.3) !important;
+        color: white !important;
+    }
+
+    ::-moz-selection {
+        background: rgba(255, 71, 87, 0.3) !important;
+        color: white !important;
+    }
     </style>
 """, unsafe_allow_html=True)
 
