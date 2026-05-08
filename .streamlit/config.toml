@@ -1,8 +1,12 @@
 [client]
-showErrorDetails = false
+showErrorDetails = true
 
 [logger]
-level = "error"
+level = "info"
 
 [server]
 maxUploadSize = 200
+
+[theme]
+primaryColor = "#FF5B5F"
+
