@@ -2,15 +2,15 @@
 
 FireGuard AI is a Streamlit app for detecting fire extinguishers in room and corridor images using a custom-trained YOLOv8 model. The app helps determine whether a scene is compliant by checking if at least one fire extinguisher is detected.
 
-[![Streamlit App](https://img.shields.io/badge/Live%20Demo-Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://fireguardai-sgmqma5vtlnpydinuprpzo.streamlit.app/)
+[![Streamlit App](https://img.shields.io/badge/Live%20Demo-Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://fireguardai-3vabjbgvvgmcndnnshhind.streamlit.app/)
 
-Live app: https://fireguardai-sgmqma5vtlnpydinuprpzo.streamlit.app/
+Live app: https://fireguardai-3vabjbgvvgmcndnnshhind.streamlit.app/
 
 ## Live demo
 
 The app is deployed here:
 
-https://fireguardai-sgmqma5vtlnpydinuprpzo.streamlit.app/
+https://fireguardai-3vabjbgvvgmcndnnshhind.streamlit.app/
 
 ## Screenshots
 
