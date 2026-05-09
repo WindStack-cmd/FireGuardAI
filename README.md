@@ -1,125 +1,233 @@
-# FireGuard AI
+# FireGuard AI 🧯
 
-FireGuard AI is a Streamlit app for detecting fire extinguishers in room and corridor images using a custom-trained YOLOv8 model. The app helps determine whether a scene is compliant by checking if at least one fire extinguisher is detected.
+Automated Fire Extinguisher Compliance Detection System
 
-[![Streamlit App](https://img.shields.io/badge/Live%20Demo-Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://fireguardai-3vabjbgvvgmcndnnshhind.streamlit.app/)
+[![Python](https://img.shields.io/badge/Python-3.11-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![YOLOv8](https://img.shields.io/badge/YOLOv8-Ultralytics-111827?style=for-the-badge)](https://docs.ultralytics.com/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-Community%20Cloud-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://streamlit.io/cloud)
+[![License](https://img.shields.io/badge/License-Proprietary-orange?style=for-the-badge)](#license)
 
-Live app: https://fireguardai-3vabjbgvvgmcndnnshhind.streamlit.app/
+## Live Links
 
-## Live demo
+- Live demo: https://fireguardai-kb7caahuauzqhnbqm3mmzb.streamlit.app/
+- GitHub: https://github.com/WindStack-cmd/FireGuardAI
 
-The app is deployed here:
+## Overview
 
-https://fireguardai-3vabjbgvvgmcndnnshhind.streamlit.app/
+FireGuard AI is a workplace safety compliance solution that detects fire extinguishers in room and corridor images using a custom-trained YOLOv8s model. The web application helps users upload images, run automated checks, and receive a clear COMPLIANT or NON-COMPLIANT result with annotated bounding boxes. A companion YOLOvX mobile workflow supports live camera-based detection for real-world field usage.
 
-## Screenshots
+The project was built for German and global workplace safety monitoring where fire extinguishers must remain visible, accessible, and properly maintained.
 
-The app uses a dark monitoring-style dashboard with a visible detection results panel, confidence summary, and improved table contrast for object names and confidence values.
+## Key Features
 
-If you want to add image examples later, place them under a folder like `assets/` and reference them here in the README.
+- 🔍 Detects fire extinguishers in images using a YOLOv8s computer vision model.
+- 📤 Upload an image and receive an instant compliance verdict.
+- ✅ Displays COMPLIANT and NON-COMPLIANT status with clear visual feedback.
+- 📦 Shows bounding boxes and confidence scores for each detected object.
+- 📱 Supports a second deployment path through the YOLOvX mobile app.
+- 🌍 Designed for workplace safety monitoring in Germany and worldwide.
+- ⚡ Built with a professional dashboard-style Streamlit interface.
+- 🛡️ Reduces manual inspection effort and enables 24/7 automated monitoring.
 
-## What the app does
+## Results
 
-- Upload an image of a room or corridor
-- Adjust the detection confidence threshold
-- View a compliance result in real time
-- Inspect the annotated image with bounding boxes
-- Review individual detection confidence scores in a compact table
+### Model Performance
 
-## Current UI changes
+| Metric | Value |
+| --- | ---: |
+| mAP@50 | 95% |
+| Precision | 98% |
+| Recall | 95% |
+| mAP@50-95 | 80% |
+| Inference Speed | 42 ms |
 
-- Dark, high-contrast dashboard layout with a custom gradient background
-- Hero section with quick model, use-case, and status cards
-- Sidebar guidance for upload flow, threshold usage, and image quality tips
-- Live confidence feedback with a threshold note and status row
-- Compliance banner for compliant and non-compliant scenes
-- Result dashboard with detection count, highest confidence, and current threshold
-- Detection details panel with stronger table visibility for object names and confidence values
-- Improved Streamlit widget styling for a cleaner monitoring-style interface
+### Training Outcome
 
-## Current UI features
+| Item | Value |
+| --- | --- |
+| Model | YOLOv8s (Ultralytics) |
+| Training Platform | Google Colab with Tesla T4 GPU |
+| Deployment Readiness | Streamlit web + YOLOvX mobile |
+| Primary Use Case | Fire extinguisher compliance detection |
 
-- Single-page dashboard layout
-- Custom sidebar with quick usage instructions and threshold guidance
-- Live status badges for readiness, confidence, and detection mode
-- Result panel styled like a monitoring dashboard
-- Compliance banner for compliant and non-compliant scenes
+## Dataset
 
-## Project structure
+| Dataset Item | Details |
+| --- | --- |
+| Total Images | 1,188 |
+| Personal Real-World Images | 90 college corridor photos |
+| Augmented Dataset Size | 2,850 images |
+| Train / Val / Test Split | 831 / 236 / 121 |
+| Primary Sources | Roboflow Universe + personal collection |
+| Annotation Method | Auto-labeled using SAM3 |
+
+The dataset was designed to improve robustness across corridor, room, and indoor inspection scenarios.
+
+## Tech Stack
+
+| Layer | Technology |
+| --- | --- |
+| Model | YOLOv8s (Ultralytics) |
+| Web Framework | Streamlit |
+| Mobile App | YOLOvX |
+| Training Platform | Google Colab |
+| Dataset Platform | Roboflow |
+| Deployment | Streamlit Community Cloud |
+| Version Control | GitHub with Git LFS |
+
+## Deployment Methods
+
+### 1) Web App - Streamlit
+
+Use the Streamlit deployment to upload room or corridor images, run compliance checks, and inspect detection results.
+
+- Upload an image from your device.
+- Adjust the confidence threshold.
+- Review the compliance verdict.
+- Inspect the annotated image with bounding boxes.
+
+Live demo: https://fireguardai-kb7caahuauzqhnbqm3mmzb.streamlit.app/
+
+**Screenshot placeholder**
+
+> Replace this block with a project screenshot when available.
 
 ```text
-FireGuardAI/
-├── app.py
-├── best.pt
-├── README.md
-├── requirements.txt
-└── FireGuardAI/
+[Web App Screenshot Placeholder]
 ```
 
-## Model file
+### 2) Mobile App - YOLOvX
 
-The app expects the trained model file to be available at the project root as `best.pt`.
+The mobile deployment is intended for real-time live camera detection and field use.
 
-If you trained the model in Google Colab, copy the exported `best.pt` file into:
+- Live camera detection at 7.6 FPS.
+- 83 ms inference.
+- Detects multiple fire extinguishers simultaneously.
+- Displays confidence scores during live monitoring.
+
+**Screenshot placeholder**
+
+> Replace this block with a mobile app screenshot when available.
 
 ```text
-C:\Users\DELL\OneDrive\Desktop\FireGuardAI\best.pt
+[YOLOvX Mobile App Screenshot Placeholder]
 ```
 
-## Requirements
+## How to Use the YOLOvX App
 
-Install the dependencies listed in `requirements.txt`:
+1. Open the YOLOvX mobile app on your device.
+2. Grant camera permissions when prompted.
+3. Point the camera at a corridor, room, or inspection area.
+4. Wait for the live model overlay to identify fire extinguishers.
+5. Review confidence scores for each detection.
+6. Move around the scene to verify visibility and placement.
+7. Use the app as a fast on-site inspection aid.
 
-- ultralytics
-- streamlit
-- pillow
-- opencv-python
-- numpy
+## Installation
 
-## How to run
+### Prerequisites
 
-1. Open PowerShell in the project folder.
-2. Make sure `best.pt` is in the project root.
-3. Install dependencies if needed:
+- Python 3.11
+- Git
+- PowerShell or another terminal
+
+### Local Setup
+
+1. Clone the repository.
+
+```powershell
+git clone https://github.com/WindStack-cmd/FireGuardAI.git
+cd FireGuardAI
+```
+
+2. Create and activate a virtual environment.
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\activate
+```
+
+3. Install the Python dependencies.
 
 ```powershell
 pip install -r requirements.txt
 ```
 
-4. Start the app:
+4. Make sure the trained model file is available at the project root.
+
+```text
+best.pt
+```
+
+5. Launch the Streamlit app.
 
 ```powershell
 streamlit run app.py
 ```
 
-5. Open the local URL shown in the terminal.
+6. Open the local URL shown in the terminal.
 
-## How to use the app
+## How It Works
 
-1. Upload a clear room or corridor image.
-2. Adjust the confidence threshold.
-3. Read the compliance result.
-4. Review the annotated image and the detection table.
+1. The user uploads an image of a room or corridor.
+2. The YOLOv8s model scans the scene for fire extinguishers.
+3. Detected objects are highlighted with bounding boxes.
+4. The app compares detection confidence with the selected threshold.
+5. A compliance status is shown immediately.
 
-## Confidence threshold guide
+## Threshold Guide
 
-- Lower values detect more objects and may produce more false positives.
-- Higher values are stricter and only keep stronger detections.
-- A balanced value around 0.5 is a good starting point for testing.
+- Lower thresholds detect more objects and may include more false positives.
+- Higher thresholds are stricter and only keep stronger detections.
+- A threshold around 0.5 is a practical starting point.
 
-## Training summary
+## Project Structure
 
-- Model: YOLOv8s
-- Training platform: Google Colab
-- Task: Fire extinguisher compliance detection
-- Output: `best.pt`
+```text
+FireGuardAI/
+├── .gitattributes
+├── .gitignore
+├── .streamlit/
+│   └── config.toml
+├── ENHANCEMENTS.md
+├── FireGuardAI/
+├── app.py
+├── best.pt
+├── packages.txt
+├── README.md
+├── requirements.txt
+└── runtime.txt
+```
 
-## Notes
+## Repository Notes
 
-- Opening `best.pt` in VS Code as text is normal to fail because it is a binary model file.
-- The app loads the model directly with Ultralytics YOLO.
-- If the file size is correct and the app runs, the model is working properly.
+- `best.pt` is a binary model file and will not open as readable text.
+- `packages.txt` contains Streamlit Cloud system dependencies.
+- `runtime.txt` defines the Python version used during deployment.
+- The app loads the model through Ultralytics YOLO at runtime.
 
-## Status
+## Acknowledgements
 
-The app has been updated and tested locally with the current dashboard layout, sidebar guidance, confidence feedback, detection result flow, and readable detection details table.
+- Ultralytics for YOLOv8.
+- Streamlit for the web application framework and cloud hosting.
+- Roboflow for dataset tooling and workflow support.
+- Google Colab for training infrastructure.
+- St. John College of Engineering and Management (SJCEM) for academic support.
+- The FireGuard AI internship context: Vision Technology Internship - YOLOvX Based Real World Object Detection.
+
+## Developer
+
+- Developer: Pratik Yadav
+- Institution: St. John College of Engineering and Management (SJCEM)
+- Batch: UC62 - Fire Extinguisher Detection
+
+## License
+
+This project is provided for portfolio and evaluation purposes. If you plan to reuse the code or model assets, please contact the developer first.
+
+## Contact / Connect
+
+- GitHub: https://github.com/WindStack-cmd/FireGuardAI
+- Live demo: https://fireguardai-kb7caahuauzqhnbqm3mmzb.streamlit.app/
+
+For collaboration, internship, or recruitment opportunities, connect through GitHub and reference the FireGuard AI project name in your message.
